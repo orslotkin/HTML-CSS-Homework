@@ -10,15 +10,19 @@ header,nav,main,aside,section,article,footer,div {
 @font-face {
     font-family: 'Nunito';
     src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype'); 
-    font-weight: 400; 
+    font-weight: 200 900; 
     font-style: normal;
+}
+    @font-face {
     font-family: 'Rubik';
-    src: url('/fonts/Rubik-Italic-VariableFont_wght.ttf') format('truetype'); 
-    font-weight: 400; 
+    src: url('/fonts/Rubik-VariableFont_wght.ttf') format('truetype'); 
+    font-weight: 200 900; 
     font-style: normal;
+}
+@font-face {
     font-family: 'Abel';
     src: url('/fonts/Abel-Regular.ttf') format('truetype'); 
-    font-weight: 400; 
+    font-weight: 200 900;  
     font-style: normal;
 }
 
@@ -27,12 +31,21 @@ body{
 }
 
 #wrapper {
-    margin: 32px 32px;
+    margin: 0 auto;
+    width: 1136px;
 }
 header {
-    display: flex;         
+    display: flex;   
+    justify-content: flex-start; 
+    gap: 135px;     
     align-items: center;
     position: relative;
+    width: 1046px;
+    height: 64px;
+    top: 32px;
+    left: 32px;
+    opacity: 1;
+    margin-bottom: 32px;
 }
 
 #logo{
@@ -46,6 +59,7 @@ header {
 a {
     text-decoration: none;
 }
+
 #logo span{
     font-family: 'Nunito';
     font-weight: 700;
@@ -59,11 +73,19 @@ a {
     top: 32px;
     left: 93px;
 }
+
 nav{
     position: absolute;
     top: 32px; 
     left: 419px;
     display: flex;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 62px;
 }
 
 nav a{
@@ -72,11 +94,15 @@ nav a{
     font-size: 30px;
     line-height: 100%;
     letter-spacing: 0%;
-    color: #612999;
-    margin-right: 62px;
+    color: #3E3F43;
+    
+    white-space: nowrap;
 }
-nav a:first-child {
-    font-weight: 700;
+nav a:hover{
+    color: #612999;
+}
+nav a.active{
+    font-weight: 800;
 }
 
 .first {
@@ -86,12 +112,15 @@ nav a:first-child {
     top: 32px;
     width: 1200px;
     height: 797px;
+    margin-bottom: 32px;
     opacity: 1;
 }
 
 .first h1{
     font-family: 'Nunito';
     font-weight: 800;
+    font-family: Nunito;
+    font-style: ExtraBold;  
     font-size: 96px;
     line-height: 100%;
     letter-spacing: 0%;
@@ -118,10 +147,12 @@ nav a:first-child {
     left: 32px;
     opacity: 1;
 }
+
 .sec {
     position: relative;
     margin-top: 32px; 
 }
+
 .sec h2{
     font-family: 'Rubik';
     font-weight: 500;
@@ -129,13 +160,15 @@ nav a:first-child {
     line-height: 40px;
     letter-spacing: 0%;
     color: #612999;
-    width: 136;
-    height: 40;
-    margin-top: 32px;
-    margin-bottom: 32px;
+    width: 136px;
+    height: 40px;
+    position: absolute;
+    top: 32px;
     left: 32px;
+    margin-bottom: 32px;
     opacity: 1;
 }
+
 .sec p{
     font-family: 'Rubik';
     font-weight: 400;
@@ -144,33 +177,40 @@ nav a:first-child {
     letter-spacing: 0%;
     text-align: justify;
     color: black;
-    height: 310;
+    width: 1136px;
+    height: 310px;
+    position: relative;
+    top: 64px;
     left: 32px;
     opacity: 1;
 }
-.products-container{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 32px;
-    margin-right: 384px;
-    gap: 32px;
-    height: 1096;
-    top: 1371px;
-    left: 32px;
-    opacity: 1;    
+
+.products-section{
+    position: relative;
+    margin-top: 32px; 
 }
-.products-container h2{
-    width: 100%;
+.products-section h2{
     font-family: 'Rubik';
     font-weight: 500;
     font-size: 40px;
     line-height: 40px;
     letter-spacing: 0%;
     color: #612999;
-    width: 282;
-    height: 40;
-    top: 1371px;
+    position: relative;
+    left: 32px;
     opacity: 1;
+    margin-bottom: 32px;
+}
+
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: top 32px;
+    margin-left: top 32px;
+    gap: 32px;
+    margin-bottom: 247px;
 }
 
 .product-card {
@@ -184,8 +224,6 @@ nav a:first-child {
     overflow: hidden;
     position: relative; 
     box-shadow: 0px 6px 40px 0px #3984BB0D;
-    margin-top: 32px;
-    margin-left: 32px;
 }
 
 
@@ -208,7 +246,6 @@ nav a:first-child {
     background: #EFECFF;  
     width: 40px;
     height: 40px;
-    width: 47;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -227,12 +264,13 @@ nav a:first-child {
     letter-spacing: 0%;
     text-align: justify;
     color: black;
-    width: 221;
-    height: 38;
+    width: 221px;
+    height: 38px;
     top: 1740px;
     left: 64px;
     margin-top: 21px;
     margin-left: 32px;
+    margin-bottom: 7px;
 }
 
 .product-card p {
@@ -242,8 +280,8 @@ nav a:first-child {
     line-height: 100%;
     letter-spacing: 0%;
     color: #333333;
-    width: 315;
-    height: 96;
+    width: 315px;
+    height: 96px;
     top: 1785px;
     left: 64px;
     margin-top: 7px;
@@ -265,8 +303,8 @@ nav a:first-child {
     letter-spacing: 0%;
     text-align: justify;
     color: #612999;
-    width: 136;
-    height: 45;
+    width: 136px;
+    height: 45px;
     top: 1858px;
     left: 64px;
     margin-left: 32px;
@@ -283,3 +321,82 @@ nav a:first-child {
     align-items: center;
     margin-top: 73px;
 }
+
+.main-footer {
+    background-color:#EFECFF;
+    width: 100%;
+    width: 1200px;
+    height: 287px;
+    top: 2713px;
+    opacity: 1;
+
+}
+
+.footer-wrapper {
+    max-width: 1136px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-columns {
+    display: flex;
+    gap: 126px; 
+    margin-bottom: 24px;
+}
+
+.col-title {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color:#333333;
+
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 16px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color:#333333;
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.social-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.social-row img {
+    width: 20px;
+    height: 20px;
+    top: 2895px;
+    left: 125px;
+    opacity: 1;
+}
+
+.copyrights p {
+    font-family: Nunito;
+    color:#333333;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 52px;
+}
+
